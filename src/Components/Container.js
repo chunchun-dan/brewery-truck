@@ -6,7 +6,7 @@ const Container = (props) => {
   return (
     <div className="four wide column" onClick={() => setIsEmpty(!isEmpty)}>
       Container
-      <div>{props.isFar?'°F':'°C'}</div>
+      <div>{props.isFahrenheit?'°F':'°C'}</div>
       <i className={showIcon}></i>
     </div>);
 };
