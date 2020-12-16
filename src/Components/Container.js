@@ -1,9 +1,10 @@
-import React from 'react';
+import React, {useState} from 'react';
 
 const Container = (props) => {
-  const showIcon = props.isEmpty?'plus icon':'';
+  const [isEmpty,setIsEmpty] = useState('true');
+  const showIcon = isEmpty?'plus icon':'';
   return (
-    <div className="four wide column" onClick={() => props.setIsEmpty(!props.isEmpty)}>
+    <div className="four wide column" onClick={() => setIsEmpty(!isEmpty)}>
       Container
       <div>{props.isFar?'°F':'°C'}</div>
       <i className={showIcon}></i>
