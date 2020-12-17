@@ -5,16 +5,25 @@ import './Modal.css';
 
 const Container = (props) => {
   const [show, setShow] = useState(false);
+  const [beer, setBeer] = useState('');
+  const tempUnit = props.isFahrenheit?'°F':'°C';
+  const temp = beer===''?'':tempUnit;
+  const warning = '';
   const closeBeerSelector = () => setShow(false);
   const openBeerSelector = () => setShow(true);
+
   return (
     <div className="four wide column">
       Container
-      <div>{props.isFahrenheit?'°F':'°C'}</div>
       <button className="ui circular plus icon button" onClick={openBeerSelector}>
         <i className="plus icon"></i>
       </button>
-      <BeerSelector show={show} onClose={closeBeerSelector}/>
+      <BeerSelector show={show} onClose={closeBeerSelector} setBeer={setBeer}/>
+      <div>
+        {beer}
+      </div>
+      <div>{temp}</div>
+      <div>{warning}</div>
     </div>);
 };
 
