@@ -1,6 +1,6 @@
 import React, {useState} from 'react';
 import Temperature from './Temperature';
-import Containers from './DeliveryBox';
+import DeliveryBox from './DeliveryBox';
 import Settings from "./Settings";
 
 const App = () => {
@@ -11,7 +11,7 @@ const App = () => {
         The Brewery Truck
       </h1>
       <Temperature isFahrenheit = {isFahrenheit} setIsFahrenheit = {setIsFahrenheit}/>
-      <Containers isFahrenheit = {isFahrenheit}/>
+      <DeliveryBox isFahrenheit = {isFahrenheit}/>
       <Settings/>
     </div>);
 };
