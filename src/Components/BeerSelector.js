@@ -1,7 +1,7 @@
 import React from 'react';
+import './Modal.css';
 
 const BeerSelector = (props) => {
-  const showHideClassName = props.show?"modal display-block":"modal display-none";
   const chooseBeer = (beer) => {
     props.setBeer(beer);
     props.onClose();
@@ -9,10 +9,10 @@ const BeerSelector = (props) => {
   const clearBeer = () => {
     props.setBeer('');
     props.onClose();
-  }
+  };
   return (
-    <div className={showHideClassName}>
-      <section className="modal-main">
+    <div className="modal">
+      <section>
         <h2>Select Beer</h2>
         <div className="ui grid container">
           <div className="three wide column">
