@@ -8,17 +8,16 @@ const Container = (props) => {
   const [beer, setBeer] = useState('');
   const closeBeerSelector = () => setShow(false);
   const openBeerSelector = () => setShow(true);
+  const layout = props.isLayoutOne?"two wide column":"six wide column";
   const tempUnit = props.isFahrenheit?'°F':'°C';
   const temp = beer===''?'':tempUnit;
   const warning = '';
 
   return (
-    <div className="four wide column">
+    <div className={layout}>
       Container
       <div onClick={openBeerSelector}>
-        {beer===''?<button className="ui circular plus icon button">
-          <i className="plus icon"></i>
-        </button>:''}
+        {beer===''?<i className="plus icon"></i>:''}
         <div>{beer}</div>
         <div>{temp}</div>
         <div>{warning}</div>
@@ -26,8 +25,7 @@ const Container = (props) => {
       {show &&
         <Portal>
           <BeerSelector show={show} onClose={closeBeerSelector} setBeer={setBeer}/>
-        </Portal>
-      }
+        </Portal>}
     </div>);
 };
 

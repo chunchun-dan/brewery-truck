@@ -1,5 +1,4 @@
 import React from 'react';
-import './Modal.css';
 
 const BeerSelector = (props) => {
   const chooseBeer = (beer) => {
@@ -11,7 +10,7 @@ const BeerSelector = (props) => {
     props.onClose();
   };
   return (
-    <div className="modal">
+    <div>
       <section>
         <h2>Select Beer</h2>
         <div className="ui grid container">

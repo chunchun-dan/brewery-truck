@@ -1,9 +1,27 @@
-import React from 'react';
+import React, { useState } from 'react';
+import Portal from './Portal';
+import LayoutSelector from './LayoutSelector';
+import BeerInformation from './BeerInfomation';
 
-const Settings = () => {
+const Settings = (props) => {
+  const [show, setShow] = useState(false);
+  const open = () => setShow(true);
+  const close = () => setShow(false);
   return(
     <div>
-      <i className="big angle double up icon"></i>
+      <i className="big info circle icon" onClick={open}></i>
+      {show &&
+        <Portal>
+          <div>
+            <div><LayoutSelector isLayoutOne={props.isLayoutOne} setIsLayoutOne={props.setIsLayoutOne}/></div>
+            <div><BeerInformation /></div>
+            <div>
+              <button onClick={close}>
+                <i className="close icon"></i>
+              </button>
+            </div>
+          </div>
+        </Portal>}
     </div>
   );
 };
