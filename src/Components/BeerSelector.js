@@ -3,6 +3,7 @@ import React from 'react';
 const BeerSelector = (props) => {
   const chooseBeer = (beer) => {
     props.setBeer(beer);
+    props.generateTemperature();
     props.onClose();
   };
   const clearBeer = () => {
