@@ -19,8 +19,33 @@ const Container = (props) => {
   const celsius = Math.floor(tempGenerator)/10
   const fahrenheit = Math.floor(tempGenerator*9/5+32)/10
   const tempTransafer = props.isFahrenheit?fahrenheit+' °F':celsius+' °C';
-  const temp = beer===''?'':tempTransafer;
-  const [warningMessage, setWarningMessage] = useState('');
+  const temperature = beer===''?'':tempTransafer;
+  let warningMessage;
+  if(beer==='Beer 1'){
+    if(celsius>6) warningMessage = "It's too hot!";
+    else if(celsius<4) warningMessage = "It's too cold!";
+    else warningMessage = '';
+  };
+  if(beer==='Beer 2'){
+    if(celsius>6) warningMessage = "It's too hot!";
+    else if(celsius<5) warningMessage = "It's too cold!";
+    else warningMessage = '';
+  };
+  if(beer==='Beer 3'){
+    if(celsius>7) warningMessage = "It's too hot!";
+    else if(celsius<4) warningMessage = "It's too cold!";
+    else warningMessage = '';
+  };
+  if(beer==='Beer 4'){
+    if(celsius>8) warningMessage = "It's too hot!";
+    else if(celsius<6) warningMessage = "It's too cold!";
+    else warningMessage = '';
+  };
+  if(beer==='Beer 5'){
+    if(celsius>5) warningMessage = "It's too hot!";
+    else if(celsius<3) warningMessage = "It's too cold!";
+    else warningMessage = '';
+  };
 
   return (
     <div className={layout}>
@@ -28,7 +53,7 @@ const Container = (props) => {
       <div onClick={openBeerSelector}>
         {beer===''?<i className="plus icon"></i>:''}
         <div>{beer}</div>
-        <div>{temp}</div>
+        <div>{temperature}</div>
         <div>{warningMessage}</div>
       </div>
       {show &&
