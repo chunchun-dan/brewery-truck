@@ -4,10 +4,12 @@ const BeerSelector = (props) => {
   const chooseBeer = (beer) => {
     props.setBeer(beer);
     props.generateTemperature();
+    props.setIsEmpty(false);
     props.onClose();
   };
   const clearBeer = () => {
     props.setBeer('');
+    props.setIsEmpty(false);
     props.onClose();
   };
   return (

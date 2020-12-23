@@ -13,7 +13,7 @@ const Settings = (props) => {
       {show &&
         <Portal>
           <div>
-            <div><LayoutSelector isLayoutOne={props.isLayoutOne} setIsLayoutOne={props.setIsLayoutOne}/></div>
+            <div><LayoutSelector isLayoutOne={props.isLayoutOne} setIsLayoutOne={props.setIsLayoutOne} isEmpty={props.isEmpty} setIsEmpty={props.setIsEmpty}/></div>
             <div><BeerInformation /></div>
             <div>
               <button onClick={close}>

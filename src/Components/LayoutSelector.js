@@ -8,10 +8,12 @@ const LayoutSelector = (props) => {
   const closeLayoutSelector = () => setShow(false);
   const chooseLayoutOne = () => {
     props.setIsLayoutOne(true);
+    props.setIsEmpty(true);
     closeLayoutSelector();
   };
   const chooseLayoutTwo = () => {
     props.setIsLayoutOne(false);
+    props.setIsEmpty(true);
     closeLayoutSelector();
   };
   return (<div>
