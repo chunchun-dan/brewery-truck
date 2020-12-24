@@ -1,0 +1,68 @@
+.container {
+  border: 5px solid gray;
+  padding: 20px;
+  text-align: center;
+}
+
+.container-beer-one {
+  background-color: lightgoldenrodyellow;
+  border: 5px solid gray;
+  padding: 20px;
+  text-align: center;
+}
+
+.container-beer-two {
+  background-color: skyblue;
+  border: 5px solid gray;
+  padding: 20px;
+  text-align: center;
+}
+
+.container-beer-three {
+  background-color: lightseagreen;
+  border: 5px solid gray;
+  padding: 20px;
+  text-align: center;
+}
+
+.container-beer-four {
+  background-color: lightsalmon;
+  border: 5px solid gray;
+  padding: 20px;
+  text-align: center;
+}
+
+.container-beer-five {
+  background-color: lightpink;
+  border: 5px solid gray;
+  padding: 20px;
+  text-align: center;
+}
+
+.container-hot {
+  background-color: auto;
+  border: 5px solid gray;
+  padding: 20px;
+  text-align: center;
+  animation-name: hot;
+  animation-duration: 3s;
+  animation-iteration-count: infinite;
+}
+@keyframes hot {
+  from {background-color: auto;}
+  to {background-color: rgb(226, 37, 37);}
+}
+
+.container-cold {
+  background-color: auto;
+  border: 5px solid gray;
+  padding: 20px;
+  text-align: center;
+  animation-name: cold;
+  animation-duration: 3s;
+  animation-iteration-count: infinite;
+}
+@keyframes cold {
+  from {background-color: auto;}
+  to {background-color: rgb(61, 61, 231);}
+}

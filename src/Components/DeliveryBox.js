@@ -1,14 +1,11 @@
 import React from 'react';
 import Container from './Container';
+import './Layout.css';
 
 const Containers = (props) => {
   if (props.isLayoutOne) {
     return (
-      <div className="ui grid container">
-        <Container isFahrenheit={props.isFahrenheit} isLayoutOne={props.isLayoutOne} isEmpty={props.isEmpty} setIsEmpty={props.setIsEmpty}/>
-        <Container isFahrenheit={props.isFahrenheit} isLayoutOne={props.isLayoutOne} isEmpty={props.isEmpty} setIsEmpty={props.setIsEmpty}/>
-        <Container isFahrenheit={props.isFahrenheit} isLayoutOne={props.isLayoutOne} isEmpty={props.isEmpty} setIsEmpty={props.setIsEmpty}/>
-        <Container isFahrenheit={props.isFahrenheit} isLayoutOne={props.isLayoutOne} isEmpty={props.isEmpty} setIsEmpty={props.setIsEmpty}/>
+      <div className="containers one">
         <Container isFahrenheit={props.isFahrenheit} isLayoutOne={props.isLayoutOne} isEmpty={props.isEmpty} setIsEmpty={props.setIsEmpty}/>
         <Container isFahrenheit={props.isFahrenheit} isLayoutOne={props.isLayoutOne} isEmpty={props.isEmpty} setIsEmpty={props.setIsEmpty}/>
         <Container isFahrenheit={props.isFahrenheit} isLayoutOne={props.isLayoutOne} isEmpty={props.isEmpty} setIsEmpty={props.setIsEmpty}/>
@@ -24,7 +21,7 @@ const Containers = (props) => {
       </div>);
   } else {
     return (
-      <div className="ui grid container">
+      <div className="containers two">
         <Container isFahrenheit={props.isFahrenheit} isLayoutOne={props.isLayoutOne} isEmpty={props.isEmpty} setIsEmpty={props.setIsEmpty}/>
         <Container isFahrenheit={props.isFahrenheit} isLayoutOne={props.isLayoutOne} isEmpty={props.isEmpty} setIsEmpty={props.setIsEmpty}/>
         <Container isFahrenheit={props.isFahrenheit} isLayoutOne={props.isLayoutOne} isEmpty={props.isEmpty} setIsEmpty={props.setIsEmpty}/>

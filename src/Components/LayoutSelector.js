@@ -21,7 +21,7 @@ const LayoutSelector = (props) => {
         <i className="pencil alternate icon"></i> Select Layout
       </button>
       {show && <Portal>
-        <div onClick={chooseLayoutOne}>Layout 8 x 2</div>
+        <div onClick={chooseLayoutOne}>Layout 6 x 2</div>
         <div onClick={chooseLayoutTwo}>Layout 2 x 2</div>
       </Portal>}
     </div>);
