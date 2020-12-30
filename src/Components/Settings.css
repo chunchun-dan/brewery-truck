@@ -1,0 +1,49 @@
+.circle.icon {
+  position: absolute;
+  left: 5px;
+  bottom: 10px;
+}
+
+.settings-background {
+  position: absolute;
+  background-color: rgba(0,0,0,0.4);
+  height: 100%;
+  width: 100%;
+  top: 0;
+  left: 0;
+}
+
+.settings-content {
+  color: black;
+  position: absolute;
+  bottom: 11px;
+  left: 8px;
+  border-radius: 50px;
+  background-color: white;
+  width: 28px;
+  height: 95px;
+  align-content: right;
+  animation-name: slideUp;
+  animation-duration: 0.2s
+}
+
+.settings-option {
+  color: black;
+  padding: 6px;
+}
+
+.close {
+  color: black;
+  padding-left: 7px;
+  padding-top: 2px;
+}
+
+.settings-option:hover,
+.settings-option:focus {
+  cursor: pointer;
+}
+
+@keyframes slideUp {
+  from {height: 0;}
+  to {height: 95px;}
+}

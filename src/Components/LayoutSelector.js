@@ -1,6 +1,8 @@
 import React, { useState } from 'react';
 import { propTypes } from 'react-bootstrap/esm/Image';
 import Portal from './Portal';
+import './Modal.css';
+import './LayoutSelector.css';
 
 const LayoutSelector = (props) => {
   const [show,setShow] = useState(false);
@@ -16,13 +18,40 @@ const LayoutSelector = (props) => {
     props.setIsEmpty(true);
     closeLayoutSelector();
   };
+  const LayoutOneSelected = props.isLayoutOne?'selected':'';
+  const LayoutTwoSelected = props.isLayoutOne?'':'selected';
   return (<div>
-      <button onClick={openLayoutSelector}>
-        <i className="pencil alternate icon"></i> Select Layout
-      </button>
+        <i className="pencil alternate icon" onClick={openLayoutSelector}></i>
       {show && <Portal>
-        <div onClick={chooseLayoutOne}>Layout 6 x 2</div>
-        <div onClick={chooseLayoutTwo}>Layout 2 x 2</div>
+        <div className="modal">
+          <div className="modal-content layout-selector">
+            <h1>Select Layout</h1>
+            <div className={LayoutOneSelected}>
+              <div className="layout-one" onClick={chooseLayoutOne}>
+                <div className="box">container</div>
+                <div className="box">container</div>
+                <div className="box">container</div>
+                <div className="box">container</div>
+                <div className="box">container</div>
+                <div className="box">container</div>
+                <div className="box">container</div>
+                <div className="box">container</div>
+                <div className="box">container</div>
+                <div className="box">container</div>
+                <div className="box">container</div>
+                <div className="box">container</div>
+              </div>
+            </div>
+            <div className={LayoutTwoSelected}>
+              <div className="layout-two" onClick={chooseLayoutTwo}>
+                <div className="box">container</div>
+                <div className="box">container</div>
+                <div className="box">container</div>
+                <div className="box">container</div>
+              </div>
+            </div>
+          </div>
+        </div>
       </Portal>}
     </div>);
 };

@@ -3,6 +3,7 @@ import ReactDOM from 'react-dom';
 import Portal from './Portal';
 import BeerSelector from './BeerSelector';
 import './Container.css';
+import './Modal.css';
 
 const Container = (props) => {
   const [show, setShow] = useState(false);
@@ -68,17 +69,15 @@ const Container = (props) => {
     };
   });
 
-  console.log(containerClassName)
-
   return (
     <div className={containerClassName}>
       <div onClick={openBeerSelector}>
         {beer === '' ?
           <div>
             <p></p>
-            <i className="plus icon"></i>
+            <i className="plus icon pointed"></i>
           </div> : ''}
-        <h3>{beer}</h3>
+        <h3 className="pointed">{beer}</h3>
         <div>{temperature}</div>
         <p></p>
         <div>{warningMessage}</div>

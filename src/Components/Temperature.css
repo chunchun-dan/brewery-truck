@@ -1,0 +1,12 @@
+.temperature-icon {
+  position: absolute;
+  top: 12px;
+  right: 5px;
+  color:deepskyblue;
+}
+
+.temperature-icon:hover,
+.temperature-icon:focus {
+  text-decoration: none;
+  cursor: pointer;
+}

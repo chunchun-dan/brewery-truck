@@ -1,4 +1,5 @@
 .containers.one {
+  margin-top: 100px;
   display: grid;
   grid-template-columns:  repeat(6, minmax(80px, 1fr));
   grid-gap: 10px;
@@ -7,6 +8,7 @@
 }
 
 .containers.two {
+  margin-top: 100px;
   display: grid;
   grid-template-columns:  repeat(2, minmax(80px, 1fr));
   grid-gap: 10px;

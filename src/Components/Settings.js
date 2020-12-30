@@ -2,6 +2,7 @@ import React, { useState } from 'react';
 import Portal from './Portal';
 import LayoutSelector from './LayoutSelector';
 import BeerInformation from './BeerInfomation';
+import './Settings.css';
 
 const Settings = (props) => {
   const [show, setShow] = useState(false);
@@ -12,13 +13,13 @@ const Settings = (props) => {
       <i className="big info circle icon" onClick={open}></i>
       {show &&
         <Portal>
-          <div>
-            <div><LayoutSelector isLayoutOne={props.isLayoutOne} setIsLayoutOne={props.setIsLayoutOne} isEmpty={props.isEmpty} setIsEmpty={props.setIsEmpty}/></div>
-            <div><BeerInformation /></div>
-            <div>
-              <button onClick={close}>
-                <i className="close icon"></i>
-              </button>
+          <div className="settings-background">
+            <div className="settings-content">
+              <div className="settings-option"><LayoutSelector isLayoutOne={props.isLayoutOne} setIsLayoutOne={props.setIsLayoutOne} isEmpty={props.isEmpty} setIsEmpty={props.setIsEmpty}/></div>
+              <div className="settings-option"><BeerInformation /></div>
+              <div className="settings-option">
+                <div><i className="close icon" onClick={close}></i></div>
+                </div>
             </div>
           </div>
         </Portal>}

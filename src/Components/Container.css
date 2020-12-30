@@ -4,6 +4,17 @@
   text-align: center;
 }
 
+.plus {
+  color: green;
+}
+
+.pointed:hover,
+.pointed:focus {
+  color: #000;
+  text-decoration: none;
+  cursor: pointer;
+}
+
 .container-beer-one {
   background-color: lightgoldenrodyellow;
   border: 5px solid gray;

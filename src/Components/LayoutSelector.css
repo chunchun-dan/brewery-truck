@@ -1,0 +1,38 @@
+.layout-one {
+  display: grid;
+  grid-template-columns:  repeat(6, minmax(50px, 70px));
+  grid-gap: 10px;
+  grid-auto-rows: 70px;
+  padding:20px;
+}
+
+.layout-two {
+  display: grid;
+  grid-template-columns:  repeat(2, minmax(50px, 70px));
+  grid-gap: 10px;
+  grid-auto-rows: 70px;
+  padding:20px
+}
+
+.box {
+  border: 1px solid black;
+  color:white;
+}
+
+.layout-one:hover,
+.layout-one:focus {
+  cursor: pointer;
+}
+
+.layout-two:hover,
+.layout-two:focus {
+  cursor: pointer;
+}
+
+.layout-selector {
+  align-items: center;
+}
+
+.selected {
+  border: 1px solid green;
+}

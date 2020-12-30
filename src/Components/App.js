@@ -3,12 +3,13 @@ import Temperature from './Temperature';
 import DeliveryBox from './DeliveryBox';
 import Settings from "./Settings";
 
+
 const App = () => {
   const [isFahrenheit, setIsFahrenheit] = useState(true);
   const [isLayoutOne, setIsLayoutOne] = useState(true);
   const [isEmpty, setIsEmpty] = useState(false);
   return (<div>
-      <h1>
+      <h1 style={{position:'absolute', top:'10px', left:'5px'}}>
         <i className="shipping fast icon"></i>
         The Brewery Truck
       </h1>
