@@ -61,7 +61,7 @@
 }
 @keyframes hot {
   from {background-color: auto;}
-  to {background-color: rgb(226, 37, 37);}
+  to {background-color: rgb(228, 87, 87);}
 }
 
 .container-cold {
@@ -75,5 +75,5 @@
 }
 @keyframes cold {
   from {background-color: auto;}
-  to {background-color: rgb(61, 61, 231);}
+  to {background-color: rgb(76, 105, 233);}
 }

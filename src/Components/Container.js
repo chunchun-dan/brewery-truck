@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import ReactDOM from 'react-dom';
+import propTypes from 'prop-types';
 import Portal from './Portal';
 import BeerSelector from './BeerSelector';
 import './Container.css';
@@ -88,5 +89,9 @@ const Container = (props) => {
         </Portal>}
     </div>);
 };
+
+Container.propTypes = {
+  isFahrenheit: propTypes.bool,
+}
 
 export default Container;
