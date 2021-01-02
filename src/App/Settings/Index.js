@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import propTypes from 'prop-types';
 import Portal from '../Portal';
 import LayoutSelector from './LayoutSelector/index';
 import BeerInformation from './BeerInformation/index';
@@ -26,5 +27,11 @@ const Settings = (props) => {
     </div>
   );
 };
+
+Settings.propTypes = {
+  show: propTypes.bool,
+  isLayoutOne: propTypes.bool,
+  isEmpty: propTypes.bool
+}
 
 export default Settings;

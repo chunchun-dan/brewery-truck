@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import propTypes from 'prop-types';
 import Portal from '../../Portal';
 import '../../Modal.css'
 
@@ -44,5 +45,9 @@ const BeerInformation = () => {
     </Portal>}
   </div>)
 };
+
+BeerInformation.propTypes = {
+  show: propTypes.bool
+}
 
 export default BeerInformation;

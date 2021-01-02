@@ -1,4 +1,5 @@
 import React from 'react';
+import propTypes from 'prop-types';
 import './BeerSelector.css';
 
 const BeerSelector = (props) => {
@@ -41,5 +42,9 @@ const BeerSelector = (props) => {
     </div>
   );
 };
+
+BeerSelector.propTypes = {
+  beer: propTypes.string
+}
 
 export default BeerSelector;

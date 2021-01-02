@@ -2,6 +2,7 @@ import React, {useState} from 'react';
 import Temperature from './Temperature/Index';
 import DeliveryBox from './DeliveryBox/Index';
 import Settings from "./Settings/Index";
+import propTypes from 'prop-types';
 
 
 const App = () => {
@@ -18,5 +19,11 @@ const App = () => {
       <Settings isLayoutOne={isLayoutOne} setIsLayoutOne={setIsLayoutOne} isEmpty={isEmpty} setIsEmpty={setIsEmpty}/>
     </div>);
 };
+
+App.propTypes = {
+  isFahrenheit: propTypes.bool,
+  isLayoutOne: propTypes.bool,
+  isEmpty: propTypes.bool
+}
 
 export default App;

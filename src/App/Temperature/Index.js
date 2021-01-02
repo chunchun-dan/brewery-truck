@@ -1,4 +1,5 @@
 import React from 'react';
+import propTypes from 'prop-types';
 import './Temperature.css';
 
 const Temperature = (props) => {
@@ -10,5 +11,10 @@ const Temperature = (props) => {
     </div>
   );
 };
+
+Temperature.propTypes = {
+  isFahrenheit: propTypes.bool,
+  tempUnit: propTypes.string
+}
 
 export default Temperature;

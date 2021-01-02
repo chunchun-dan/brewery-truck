@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import propTypes from 'prop-types';
 import Portal from '../../Portal';
 import '../../Modal.css';
 import './LayoutSelector.css';
@@ -54,5 +55,11 @@ const LayoutSelector = (props) => {
       </Portal>}
     </div>);
 };
+
+LayoutSelector.propTypes = {
+  show: propTypes.bool,
+  LayoutOneSelected: propTypes.string,
+  LayoutTwoSelected: propTypes.string
+}
 
 export default LayoutSelector;

@@ -1,4 +1,5 @@
 import React from 'react';
+import propTypes from 'prop-types';
 import Container from './Container/Index';
 import './Layout.css';
 
@@ -30,5 +31,11 @@ const Containers = (props) => {
     );
   }
 };
+
+Containers.propTypes = {
+  isFahrenheit: propTypes.bool,
+  isLayoutOne: propTypes.bool,
+  isEmpty: propTypes.bool
+}
 
 export default Containers;

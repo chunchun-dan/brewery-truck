@@ -91,7 +91,19 @@ const Container = (props) => {
 };
 
 Container.propTypes = {
+  show: propTypes.bool,
+  beer: propTypes.string,
+  tempGenerator: propTypes.number,
+  min: propTypes.number,
+  max: propTypes.number,
+  rand: propTypes.number,
+  celsius: propTypes.number,
+  fahrenheit: propTypes.number,
   isFahrenheit: propTypes.bool,
+  tempTransafer: propTypes.string,
+  temperature: propTypes.string,
+  containerClassName: propTypes.string,
+  warningMessage: propTypes.string
 }
 
 export default Container;
