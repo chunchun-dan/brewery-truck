@@ -1,10 +1,10 @@
 import React, { useState, useEffect } from 'react';
 import ReactDOM from 'react-dom';
 import propTypes from 'prop-types';
-import Portal from './Portal';
-import BeerSelector from './BeerSelector';
+import Portal from '../../Portal';
+import BeerSelector from './BeerSelector/Index';
 import './Container.css';
-import './Modal.css';
+import '../../Modal.css';
 
 const Container = (props) => {
   const [show, setShow] = useState(false);

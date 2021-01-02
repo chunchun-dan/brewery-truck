@@ -1,5 +1,5 @@
 import React from 'react';
-import Container from './Container';
+import Container from './Container/Index';
 import './Layout.css';
 
 const Containers = (props) => {

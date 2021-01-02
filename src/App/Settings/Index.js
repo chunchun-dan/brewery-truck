@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
-import Portal from './Portal';
-import LayoutSelector from './LayoutSelector';
-import BeerInformation from './BeerInfomation';
+import Portal from '../Portal';
+import LayoutSelector from './LayoutSelector/index';
+import BeerInformation from './BeerInformation/index';
 import './Settings.css';
 
 const Settings = (props) => {

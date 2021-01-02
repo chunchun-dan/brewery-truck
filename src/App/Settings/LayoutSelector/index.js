@@ -1,7 +1,6 @@
 import React, { useState } from 'react';
-import { propTypes } from 'react-bootstrap/esm/Image';
-import Portal from './Portal';
-import './Modal.css';
+import Portal from '../../Portal';
+import '../../Modal.css';
 import './LayoutSelector.css';
 
 const LayoutSelector = (props) => {

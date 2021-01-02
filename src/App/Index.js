@@ -1,7 +1,7 @@
 import React, {useState} from 'react';
-import Temperature from './Temperature';
-import DeliveryBox from './DeliveryBox';
-import Settings from "./Settings";
+import Temperature from './Temperature/Index';
+import DeliveryBox from './DeliveryBox/Index';
+import Settings from "./Settings/Index";
 
 
 const App = () => {

@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
-import Portal from './Portal';
-import './Modal.css'
+import Portal from '../../Portal';
+import '../../Modal.css'
 
 const BeerInformation = () => {
   const [show,setShow] = useState(false);
