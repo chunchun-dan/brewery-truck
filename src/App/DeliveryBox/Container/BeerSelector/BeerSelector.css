@@ -13,6 +13,10 @@
   text-align: center;
   font-size: 25px;
 }
+.beer-one-button:hover,
+.beer-one-button:focus {
+  background-color: rgb(247, 247, 218);
+}
 
 .beer-two-button {
   background-color: skyblue;
@@ -20,6 +24,10 @@
   padding: 30px;
   text-align: center;
   font-size: 25px;
+}
+.beer-two-button:hover,
+.beer-two-button:focus {
+  background-color: rgb(141, 203, 228);
 }
 
 .beer-three-button {
@@ -29,6 +37,10 @@
   text-align: center;
   font-size: 25px;
 }
+.beer-three-button:hover,
+.beer-three-button:focus {
+  background-color: rgb(89, 180, 176);
+}
 
 .beer-four-button {
   background-color: lightsalmon;
@@ -37,6 +49,10 @@
   text-align: center;
   font-size: 25px;
 }
+.beer-four-button:hover,
+.beer-four-button:focus {
+  background-color: rgb(252, 173, 142);
+}
 
 .beer-five-button {
   background-color: lightpink;
@@ -44,6 +60,10 @@
   padding: 30px;
   text-align: center;
   font-size: 25px;
+}
+.beer-five-button:hover,
+.beer-five-button:focus {
+  background-color: rgb(250, 203, 210);
 }
 
 .clear-button {
@@ -55,4 +75,8 @@
   border-radius: 40px;
   width: 200px;
   margin-left: 35%;
+}
+.clear-button:hover,
+.clear-button:focus {
+  background-color: rgb(193, 205, 221);
 }

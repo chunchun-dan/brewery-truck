@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 import propTypes from 'prop-types';
 import './BeerSelector.css';
 
@@ -14,9 +14,21 @@ const BeerSelector = (props) => {
     props.setIsEmpty(false);
     props.onClose();
   };
+  const closeOnEscapeKeyDown = (e) => {
+    if((e.charCode || e.keyCode) === 27) {
+      props.onClose();
+    }
+  };
+  useEffect(() => {
+    document.body.addEventListener('keydown', closeOnEscapeKeyDown);
+    return function cleanup() {
+      document.body.removeEventListener('keydown', closeOnEscapeKeyDown);
+    };
+  }, []);
+
   return (
-    <div className="modal">
-      <section className="modal-content">
+    <div className="modal" onClick={props.onClose}>
+      <section className="modal-content" onClick={e => e.stopPropagation()}>
         <h1>Select Beer
         <span className="close" onClick={props.onClose}>&times;</span>
         </h1>

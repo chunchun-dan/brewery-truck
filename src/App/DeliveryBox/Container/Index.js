@@ -71,14 +71,14 @@ const Container = (props) => {
   });
 
   return (
-    <div className={containerClassName}>
-      <div onClick={openBeerSelector}>
+    <div>
+      <div className={containerClassName+' pointed'} onClick={openBeerSelector}>
         {beer === '' ?
           <div>
             <p></p>
-            <i className="plus icon pointed"></i>
+            <i className="plus icon"></i>
           </div> : ''}
-        <h3 className="pointed">{beer}</h3>
+        <h3>{beer}</h3>
         <div>{temperature}</div>
         <p></p>
         <div>{warningMessage}</div>

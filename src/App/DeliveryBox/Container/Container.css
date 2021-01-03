@@ -2,15 +2,18 @@
   border: 5px solid gray;
   padding: 20px;
   text-align: center;
+  height: 200px;
 }
 
 .plus {
+  position: relative;
+  top: 50px;
   color: green;
 }
 
 .pointed:hover,
 .pointed:focus {
-  color: #000;
+  background-color: auto;
   text-decoration: none;
   cursor: pointer;
 }
@@ -20,6 +23,7 @@
   border: 5px solid gray;
   padding: 20px;
   text-align: center;
+  height: 200px;
 }
 
 .container-beer-two {
@@ -27,6 +31,7 @@
   border: 5px solid gray;
   padding: 20px;
   text-align: center;
+  height: 200px;
 }
 
 .container-beer-three {
@@ -34,6 +39,7 @@
   border: 5px solid gray;
   padding: 20px;
   text-align: center;
+  height: 200px;
 }
 
 .container-beer-four {
@@ -41,6 +47,7 @@
   border: 5px solid gray;
   padding: 20px;
   text-align: center;
+  height: 200px;
 }
 
 .container-beer-five {
@@ -48,6 +55,7 @@
   border: 5px solid gray;
   padding: 20px;
   text-align: center;
+  height: 200px;
 }
 
 .container-hot {
@@ -55,6 +63,7 @@
   border: 5px solid gray;
   padding: 20px;
   text-align: center;
+  height: 200px;
   animation-name: hot;
   animation-duration: 3s;
   animation-iteration-count: infinite;
@@ -69,6 +78,7 @@
   border: 5px solid gray;
   padding: 20px;
   text-align: center;
+  height: 200px;
   animation-name: cold;
   animation-duration: 3s;
   animation-iteration-count: infinite;
