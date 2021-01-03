@@ -1,30 +1,36 @@
-import React, { useState } from 'react';
+import React, { useEffect, useState } from 'react';
 import propTypes from 'prop-types';
 import Portal from '../../Portal';
 import '../../Modal.css';
 import './LayoutSelector.css';
 
 const LayoutSelector = (props) => {
-  const [show,setShow] = useState(false);
-  const openLayoutSelector = () => setShow(true);
-  const closeLayoutSelector = () => setShow(false);
   const chooseLayoutOne = () => {
     props.setIsLayoutOne(true);
     props.setIsEmpty(true);
-    closeLayoutSelector();
+    props.closeLayoutSelector();
   };
   const chooseLayoutTwo = () => {
     props.setIsLayoutOne(false);
     props.setIsEmpty(true);
-    closeLayoutSelector();
+    props.closeLayoutSelector();
   };
   const LayoutOneSelected = props.isLayoutOne?'selected':'';
   const LayoutTwoSelected = props.isLayoutOne?'':'selected';
-  return (<div>
-        <i className="pencil alternate icon" onClick={openLayoutSelector}></i>
-      {show && <Portal>
-        <div className="modal">
-          <div className="modal-content layout-selector">
+  const closeOnEscapeKeyDown = (e) => {
+    if((e.charCode || e.keyCode) === 27) {
+      props.closeLayoutSelector();
+    }
+  };
+  useEffect(() => {
+    document.body.addEventListener('keydown', closeOnEscapeKeyDown);
+    return function cleanup() {
+      document.body.removeEventListener('keydown', closeOnEscapeKeyDown);
+    };
+  }, []);
+  return (
+        <div className="modal" onClick={props.closeLayoutSelector}>
+          <div className="modal-content layout-selector" onClick={e => e.stopPropagation()}>
             <h1>Select Layout</h1>
             <div className={LayoutOneSelected}>
               <div className="layout-one" onClick={chooseLayoutOne}>
@@ -52,8 +58,7 @@ const LayoutSelector = (props) => {
             </div>
           </div>
         </div>
-      </Portal>}
-    </div>);
+  )
 };
 
 LayoutSelector.propTypes = {

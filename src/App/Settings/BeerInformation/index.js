@@ -1,19 +1,25 @@
-import React, { useState } from 'react';
+import React, { useEffect, useState } from 'react';
 import propTypes from 'prop-types';
 import Portal from '../../Portal';
 import '../../Modal.css'
 
-const BeerInformation = () => {
-  const [show,setShow] = useState(false);
-  const openBeerInfo = () => setShow(true);
-  const closeBeerInfo = () => setShow(false);
-  return (<div>
-      <i className="beer icon" onClick={openBeerInfo}></i>
-    {show && <Portal>
-      <div className="modal">
-        <section className="modal-content">
+const BeerInformation = (props) => {
+  const closeOnEscapeKeyDown = (e) => {
+    if((e.charCode || e.keyCode) === 27) {
+      props.closeBeerInfo();
+    }
+  };
+  useEffect(() => {
+    document.body.addEventListener('keydown', closeOnEscapeKeyDown);
+    return function cleanup() {
+      document.body.removeEventListener('keydown', closeOnEscapeKeyDown);
+    };
+  }, []);
+  return (
+      <div className="modal" onClick={props.closeBeerInfo}>
+        <section className="modal-content" onClick={e => e.stopPropagation()}>
           <h1>Beers
-            <span className="close" onClick={closeBeerInfo}>&times;</span>
+            <span className="close" onClick={props.closeBeerInfo}>&times;</span>
           </h1>
           <div>
             <h4>Beer 1</h4>
@@ -42,8 +48,7 @@ const BeerInformation = () => {
           </div>
         </section>
       </div>
-    </Portal>}
-  </div>)
+    )
 };
 
 BeerInformation.propTypes = {
