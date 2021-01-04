@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from 'react';
 import propTypes from 'prop-types';
-import Portal from '../../../Portal';
-import BeerInfo from '../../../Settings/BeerInformation/index';
+import Portal from '../../../components/Portal';
+import BeerInfo from '../../../components/BeerInformation/index';
 import './BeerSelector.css';
 
 const BeerSelector = (props) => {

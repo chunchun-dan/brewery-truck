@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from 'react';
 import propTypes from 'prop-types';
-import Portal from '../../Portal';
-import '../../Modal.css';
+import Portal from '../../components/Portal';
+import '../../components/Modal.css';
 import './LayoutSelector.css';
 
 const LayoutSelector = (props) => {

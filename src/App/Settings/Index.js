@@ -1,8 +1,8 @@
 import React, { useEffect, useState } from 'react';
 import propTypes from 'prop-types';
-import Portal from '../Portal';
+import Portal from '../components/Portal';
 import LayoutSelector from './LayoutSelector/index';
-import BeerInformation from './BeerInformation/index';
+import BeerInformation from '../components/BeerInformation/index';
 import './Settings.css';
 
 const Settings = (props) => {
