@@ -3,14 +3,15 @@ import ReactDOM from 'react-dom';
 import propTypes from 'prop-types';
 import Portal from '../../Portal';
 import BeerSelector from './BeerSelector/Index';
+import BeerInfo from '../../Settings/BeerInformation/index';
 import './Container.css';
 import '../../Modal.css';
 
 const Container = (props) => {
-  const [show, setShow] = useState(false);
+  const [showBeerSelector, setShowBeerSelector] = useState(false);
   const [beer, setBeer] = useState('');
-  const closeBeerSelector = () => setShow(false);
-  const openBeerSelector = () => setShow(true);
+  const closeBeerSelector = () => setShowBeerSelector(false);
+  const openBeerSelector = () => setShowBeerSelector(true);
 
   const [tempGenerator, setTempGenerator] = useState(0);
   const generateTemperature = () => {
@@ -83,9 +84,9 @@ const Container = (props) => {
         <p></p>
         <div>{warningMessage}</div>
       </div>
-      {show &&
+      {showBeerSelector &&
         <Portal>
-          <BeerSelector show={show} onClose={closeBeerSelector} setBeer={setBeer} generateTemperature={generateTemperature} setIsEmpty={props.setIsEmpty} />
+          <BeerSelector closeBeerSelector={closeBeerSelector} setBeer={setBeer} generateTemperature={generateTemperature} setIsEmpty={props.setIsEmpty} />
         </Portal>}
     </div>);
 };

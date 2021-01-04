@@ -11,13 +11,6 @@
   color: green;
 }
 
-.pointed:hover,
-.pointed:focus {
-  background-color: auto;
-  text-decoration: none;
-  cursor: pointer;
-}
-
 .container-beer-one {
   background-color: lightgoldenrodyellow;
   border: 5px solid gray;

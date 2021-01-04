@@ -80,3 +80,17 @@
 .clear-button:focus {
   background-color: rgb(193, 205, 221);
 }
+
+.beer-info {
+  position: relative;
+  float: right;
+  top: center;
+  left: 10px;
+  color:gold;
+}
+.beer-info:hover,
+.beer-info:focus {
+  color: rgb(255, 226, 60);
+  text-decoration: none;
+  cursor: pointer;
+}

@@ -1,7 +1,6 @@
 import React, { useEffect, useState } from 'react';
 import propTypes from 'prop-types';
-import Portal from '../../Portal';
-import '../../Modal.css'
+import './BeerInformation.css'
 
 const BeerInformation = (props) => {
   const closeOnEscapeKeyDown = (e) => {
@@ -21,27 +20,27 @@ const BeerInformation = (props) => {
           <h1>Beers
             <span className="close" onClick={props.closeBeerInfo}>&times;</span>
           </h1>
-          <div>
+          <div className="beer-one">
             <h4>Beer 1</h4>
             <p>Refrigeration requirements: 4-6°C</p>
             <p></p>
           </div>
-          <div>
+          <div className="beer-two">
             <h4>Beer 2</h4>
             <p>Refrigeration requirements: 5-6°C</p>
             <p></p>
           </div>
-          <div>
+          <div className="beer-three">
             <h4>Beer 3</h4>
             <p>Refrigeration requirements: 4-7°C</p>
             <p></p>
           </div>
-          <div>
+          <div className="beer-four">
             <h4>Beer 4</h4>
             <p>Refrigeration requirements: 6-8°C</p>
             <p></p>
           </div>
-          <div>
+          <div className="beer-five">
             <h4>Beer 5</h4>
             <p>Refrigeration requirements: 3-5°C</p>
             <p></p>
