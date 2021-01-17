@@ -7,7 +7,7 @@ import BeerInfo from '../../components/BeerInformation/index';
 import './Container.css';
 import '../../components/Modal.css';
 import { isFahrenheitState, isEmptyState } from '../../Atoms';
-import { useRecoilValue } from 'recoil';
+import { useRecoilState, useRecoilValue } from 'recoil';
 
 const Container = (props) => {
   const [showBeerSelector, setShowBeerSelector] = useState(false);
@@ -28,7 +28,7 @@ const Container = (props) => {
   const tempTransafer = isFahrenheit ? fahrenheit + ' °F' : celsius + ' °C';
   const temperature = beer === '' ? '' : tempTransafer;
 
-  const isEmpty = useRecoilValue(isEmptyState);
+  const [isEmpty, setIsEmpty] = useRecoilState(isEmptyState);
 
   let containerClassName = 'container';
   let warningMessage;
@@ -73,6 +73,7 @@ const Container = (props) => {
   useEffect(() => {
     if (isEmpty) {
       setBeer('');
+      setIsEmpty(false);
     };
   });
 
