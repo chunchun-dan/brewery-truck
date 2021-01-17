@@ -2,40 +2,41 @@ import React from 'react';
 import propTypes from 'prop-types';
 import Container from './Container/Index';
 import './Layout.css';
+import { isLayoutOneState } from '../Atoms';
+import { useRecoilValue } from 'recoil';
 
-const Containers = (props) => {
-  if (props.isLayoutOne) {
+const DeliveryBox = () => {
+  const isLayoutOne = useRecoilValue(isLayoutOneState);
+  if (isLayoutOne) {
     return (
       <div className="containers one">
-        <Container isFahrenheit={props.isFahrenheit} isLayoutOne={props.isLayoutOne} isEmpty={props.isEmpty} setIsEmpty={props.setIsEmpty}/>
-        <Container isFahrenheit={props.isFahrenheit} isLayoutOne={props.isLayoutOne} isEmpty={props.isEmpty} setIsEmpty={props.setIsEmpty}/>
-        <Container isFahrenheit={props.isFahrenheit} isLayoutOne={props.isLayoutOne} isEmpty={props.isEmpty} setIsEmpty={props.setIsEmpty}/>
-        <Container isFahrenheit={props.isFahrenheit} isLayoutOne={props.isLayoutOne} isEmpty={props.isEmpty} setIsEmpty={props.setIsEmpty}/>
-        <Container isFahrenheit={props.isFahrenheit} isLayoutOne={props.isLayoutOne} isEmpty={props.isEmpty} setIsEmpty={props.setIsEmpty}/>
-        <Container isFahrenheit={props.isFahrenheit} isLayoutOne={props.isLayoutOne} isEmpty={props.isEmpty} setIsEmpty={props.setIsEmpty}/>
-        <Container isFahrenheit={props.isFahrenheit} isLayoutOne={props.isLayoutOne} isEmpty={props.isEmpty} setIsEmpty={props.setIsEmpty}/>
-        <Container isFahrenheit={props.isFahrenheit} isLayoutOne={props.isLayoutOne} isEmpty={props.isEmpty} setIsEmpty={props.setIsEmpty}/>
-        <Container isFahrenheit={props.isFahrenheit} isLayoutOne={props.isLayoutOne} isEmpty={props.isEmpty} setIsEmpty={props.setIsEmpty}/>
-        <Container isFahrenheit={props.isFahrenheit} isLayoutOne={props.isLayoutOne} isEmpty={props.isEmpty} setIsEmpty={props.setIsEmpty}/>
-        <Container isFahrenheit={props.isFahrenheit} isLayoutOne={props.isLayoutOne} isEmpty={props.isEmpty} setIsEmpty={props.setIsEmpty}/>
-        <Container isFahrenheit={props.isFahrenheit} isLayoutOne={props.isLayoutOne} isEmpty={props.isEmpty} setIsEmpty={props.setIsEmpty}/>
+        <Container />
+        <Container />
+        <Container />
+        <Container />
+        <Container />
+        <Container />
+        <Container />
+        <Container />
+        <Container />
+        <Container />
+        <Container />
+        <Container />
       </div>);
   } else {
     return (
       <div className="containers two">
-        <Container isFahrenheit={props.isFahrenheit} isLayoutOne={props.isLayoutOne} isEmpty={props.isEmpty} setIsEmpty={props.setIsEmpty}/>
-        <Container isFahrenheit={props.isFahrenheit} isLayoutOne={props.isLayoutOne} isEmpty={props.isEmpty} setIsEmpty={props.setIsEmpty}/>
-        <Container isFahrenheit={props.isFahrenheit} isLayoutOne={props.isLayoutOne} isEmpty={props.isEmpty} setIsEmpty={props.setIsEmpty}/>
-        <Container isFahrenheit={props.isFahrenheit} isLayoutOne={props.isLayoutOne} isEmpty={props.isEmpty} setIsEmpty={props.setIsEmpty}/>
+        <Container />
+        <Container />
+        <Container />
+        <Container />
       </div>
     );
   }
 };
 
-Containers.propTypes = {
-  isFahrenheit: propTypes.bool,
+DeliveryBox.propTypes = {
   isLayoutOne: propTypes.bool,
-  isEmpty: propTypes.bool
 }
 
-export default Containers;
+export default DeliveryBox;

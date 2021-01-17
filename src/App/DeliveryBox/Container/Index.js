@@ -6,6 +6,8 @@ import BeerSelector from './BeerSelector/Index';
 import BeerInfo from '../../components/BeerInformation/index';
 import './Container.css';
 import '../../components/Modal.css';
+import { isFahrenheitState, isEmptyState } from '../../Atoms';
+import { useRecoilValue } from 'recoil';
 
 const Container = (props) => {
   const [showBeerSelector, setShowBeerSelector] = useState(false);
@@ -22,40 +24,43 @@ const Container = (props) => {
   };
   const celsius = Math.floor(tempGenerator) / 10
   const fahrenheit = Math.floor(tempGenerator * 9 / 5 + 32) / 10
-  const tempTransafer = props.isFahrenheit ? fahrenheit + ' °F' : celsius + ' °C';
+  const isFahrenheit = useRecoilValue(isFahrenheitState);
+  const tempTransafer = isFahrenheit ? fahrenheit + ' °F' : celsius + ' °C';
   const temperature = beer === '' ? '' : tempTransafer;
+
+  const isEmpty = useRecoilValue(isEmptyState);
 
   let containerClassName = 'container';
   let warningMessage;
 
   if (beer === 'Beer 1') {
     containerClassName = "container-beer-one";
-    if (celsius > 6) {warningMessage = "It's too hot!"; containerClassName= "container-hot";}
-    else if (celsius < 4) {warningMessage = "It's too cold!"; containerClassName= "container-cold";}
+    if (celsius > 6) { warningMessage = "It's too hot!"; containerClassName = "container-hot"; }
+    else if (celsius < 4) { warningMessage = "It's too cold!"; containerClassName = "container-cold"; }
     else warningMessage = '';
   };
   if (beer === 'Beer 2') {
     containerClassName = "container-beer-two";
-    if (celsius > 6) {warningMessage = "It's too hot!"; containerClassName= "container-hot";}
-    else if (celsius < 5) {warningMessage = "It's too cold!"; containerClassName= "container-cold";}
+    if (celsius > 6) { warningMessage = "It's too hot!"; containerClassName = "container-hot"; }
+    else if (celsius < 5) { warningMessage = "It's too cold!"; containerClassName = "container-cold"; }
     else warningMessage = '';
   };
   if (beer === 'Beer 3') {
     containerClassName = "container-beer-three";
-    if (celsius > 7) {warningMessage = "It's too hot!"; containerClassName= "container-hot";}
-    else if (celsius < 4) {warningMessage = "It's too cold!"; containerClassName= "container-cold";}
+    if (celsius > 7) { warningMessage = "It's too hot!"; containerClassName = "container-hot"; }
+    else if (celsius < 4) { warningMessage = "It's too cold!"; containerClassName = "container-cold"; }
     else warningMessage = '';
   };
   if (beer === 'Beer 4') {
     containerClassName = "container-beer-four";
-    if (celsius > 8) {warningMessage = "It's too hot!"; containerClassName= "container-hot";}
-    else if (celsius < 6) {warningMessage = "It's too cold!"; containerClassName= "container-cold";}
+    if (celsius > 8) { warningMessage = "It's too hot!"; containerClassName = "container-hot"; }
+    else if (celsius < 6) { warningMessage = "It's too cold!"; containerClassName = "container-cold"; }
     else warningMessage = '';
   };
   if (beer === 'Beer 5') {
     containerClassName = "container-beer-five";
-    if (celsius > 5) {warningMessage = "It's too hot!"; containerClassName= "container-hot";}
-    else if (celsius < 3) {warningMessage = "It's too cold!"; containerClassName= "container-cold";}
+    if (celsius > 5) { warningMessage = "It's too hot!"; containerClassName = "container-hot"; }
+    else if (celsius < 3) { warningMessage = "It's too cold!"; containerClassName = "container-cold"; }
     else warningMessage = '';
   };
 
@@ -66,14 +71,14 @@ const Container = (props) => {
     return () => clearInterval(interval);
   }, []);
   useEffect(() => {
-    if (props.isEmpty) {
+    if (isEmpty) {
       setBeer('');
     };
   });
 
   return (
     <div>
-      <div className={containerClassName+' pointed'} onClick={openBeerSelector}>
+      <div className={containerClassName + ' pointed'} onClick={openBeerSelector}>
         {beer === '' ?
           <div>
             <p></p>
@@ -86,7 +91,7 @@ const Container = (props) => {
       </div>
       {showBeerSelector &&
         <Portal>
-          <BeerSelector closeBeerSelector={closeBeerSelector} setBeer={setBeer} generateTemperature={generateTemperature} setIsEmpty={props.setIsEmpty} />
+          <BeerSelector closeBeerSelector={closeBeerSelector} setBeer={setBeer} generateTemperature={generateTemperature} />
         </Portal>}
     </div>);
 };
@@ -104,7 +109,8 @@ Container.propTypes = {
   tempTransafer: propTypes.string,
   temperature: propTypes.string,
   containerClassName: propTypes.string,
-  warningMessage: propTypes.string
+  warningMessage: propTypes.string,
+  isEmpty: propTypes.bool
 }
 
 export default Container;

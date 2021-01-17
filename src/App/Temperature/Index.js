@@ -1,12 +1,15 @@
 import React from 'react';
 import propTypes from 'prop-types';
 import './Temperature.css';
+import { isFahrenheitState } from '../Atoms';
+import { useRecoilState } from 'recoil';
 
-const Temperature = (props) => {
-  const tempUnit = props.isFahrenheit?'°F':'°C';
-  return(
+const Temperature = () => {
+  const [isFahrenheit, setIsFahrenheit] = useRecoilState(isFahrenheitState);
+  const tempUnit = isFahrenheit ? '°F' : '°C';
+  return (
     <div className="temperature-icon">
-      <i className="big snowflake icon" onClick={() => props.setIsFahrenheit(!props.isFahrenheit)}></i>
+      <i className="big snowflake icon" onClick={() => setIsFahrenheit(!isFahrenheit)}></i>
       <div>{tempUnit}</div>
     </div>
   );

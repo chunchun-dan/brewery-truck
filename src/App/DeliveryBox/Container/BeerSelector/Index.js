@@ -3,24 +3,27 @@ import propTypes from 'prop-types';
 import Portal from '../../../components/Portal';
 import BeerInfo from '../../../components/BeerInformation/index';
 import './BeerSelector.css';
+import { useRecoilState } from 'recoil';
+import { isEmptyState } from '../../../Atoms';
 
 const BeerSelector = (props) => {
+  const [isEmpty, setIsEmpty] = useRecoilState(isEmptyState);
   const [showBeerInfo, setShowBeerInfo] = useState(false);
   const closeBeerInfo = () => setShowBeerInfo(false);
   const openBeerInfo = () => setShowBeerInfo(true);
   const chooseBeer = (beer) => {
     props.setBeer(beer);
     props.generateTemperature();
-    props.setIsEmpty(false);
+    setIsEmpty(false);
     props.closeBeerSelector();
   };
   const clearBeer = () => {
     props.setBeer('');
-    props.setIsEmpty(false);
+    setIsEmpty(false);
     props.closeBeerSelector();
   };
   const closeOnEscapeKeyDown = (e) => {
-    if((e.charCode || e.keyCode) === 27) {
+    if ((e.charCode || e.keyCode) === 27) {
       props.closeBeerSelector();
     }
   };
@@ -35,8 +38,8 @@ const BeerSelector = (props) => {
     <div className="modal" onClick={props.closeBeerSelector}>
       <section className="modal-content" onClick={e => e.stopPropagation()}>
         <h1>
-        <span className="header">Select Beer</span>
-        <span><i className="beer icon beer-info" onClick={openBeerInfo} /></span>
+          <span className="header">Select Beer</span>
+          <span><i className="beer icon beer-info" onClick={openBeerInfo} /></span>
         </h1>
         <div className="beer-options">
           <div>
@@ -58,7 +61,7 @@ const BeerSelector = (props) => {
         <button className="clear-button" onClick={clearBeer}>Clear</button>
         {showBeerInfo &&
           <Portal>
-            <BeerInfo closeBeerInfo={closeBeerInfo}/>
+            <BeerInfo closeBeerInfo={closeBeerInfo} />
           </Portal>}
       </section>
     </div>
@@ -66,7 +69,8 @@ const BeerSelector = (props) => {
 };
 
 BeerSelector.propTypes = {
-  beer: propTypes.string
+  beer: propTypes.string,
+  isEmpty: propTypes.bool
 }
 
 export default BeerSelector;
